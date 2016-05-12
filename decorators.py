@@ -23,4 +23,3 @@ def tokenize_whitespace(inText):
 
 s = "String .. with Punctuation?"
 print tokenize_whitespace(s)
-    
