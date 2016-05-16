@@ -19,4 +19,14 @@ data3 = np.genfromtxt(in_data1, dtype = int, delimiter = ',', names = True)
 print data
 print data1
 print data2
-print data3 
+print data3
+
+#Preprocessing columns
+in_data = StringIO("30kg,inr2000,31.11,56.33,1\n52kg,inr8000.35,12,16.7,2")
+
+strip_func_1 = lambda x: float(x.rstrip('kg'))
+strip_func_2 = lambda x: float(x.lstrip('inr'))
+
+convert_funcs = {0:strip_func_1, 1:strip_func_2}
+data = np.genfromtxt(in_data, delimiter = ',', converters = convert_funcs)
+print data
